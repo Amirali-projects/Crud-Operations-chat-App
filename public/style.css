@@ -1,0 +1,18 @@
+.chat{
+   background-color: rgb(125, 170, 209);
+   margin-left: 5px;
+   padding-left: 7px;
+   width:fit-content;
+   border-radius: 10px;
+   margin:5px;
+}
+.msg{
+    background-color:rgb(62, 62, 241);
+    border-radius: 12px;
+    padding: 20px;
+    display:inline-block;
+}
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}

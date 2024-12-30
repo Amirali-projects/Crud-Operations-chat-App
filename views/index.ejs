@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All chats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to all chats</h1>
+  <div class="container">
+    <% for( let chat of chats ) { %>
+        <div class="chat">
+        <h5 class="from">From:<%= chat.from %></h5>
+        <p class="to">To:<%= chat.to %></p>
+        <p class="msg">message:<%= chat.msg %>
+            <br> <br>
+            <form  method="get" action="/chats/<%= chat._id%>/edit">
+                <button>Edit Your Chat</button>
+            </form>
+            <br>
+            <form method="post" action="/chats/<%= chat._id%>?_method=Delete">
+                <button>Delete Your Chat</button>
+            </form>
+        </p>
+        <hr>
+        <p class="date">Created_At:<%=chat.created_at %></p>
+        <p class="date">Created_At:<%=chat.created_at.toString().split(" ").slice(0,4).join(" ")%></p>
+        <p class="date">Created_At:<%=chat.created_at.toString().split(" ").slice(4,5).join(" ")%></p>
+        <p class="date">Created_At:<%=chat.created_at.toString().split(" ").slice(5).join(" ")%></p>
+        <br>
+        
+    </div>
+      <% } %>
+    </div>
+      <br> <br>
+      <form method="get" action="/chats/new">
+        <button>Enter new chat</button>
+    </form>
+</body>
+</html>
+
